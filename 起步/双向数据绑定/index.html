@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue 双向数据绑定</title>
+</head>
+<body>
+	<div id="sayName">
+		<!-- v-model绑定数据 -->
+		<input  v-model="name">
+		<p>hello,{{name}}</p>
+	</div>
+</body>
+<!-- 引入开发板vue -->
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+		el:"#sayName",
+		data:{
+			name:"王思佳"
+		}
+	})
+</script>
+</html>

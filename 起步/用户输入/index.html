@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户输入</title>
+</head>
+<body>
+	<div id='app'>
+		<p>{{msg}}</p>
+		<!-- v-on绑定方法 -->
+		<button v-on:click="alertMsg">alertMsg</button>
+	</div>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+		el:"#app",
+		data:{
+			msg:"hello！"
+		},
+		//这里写方法
+		methods:{
+			alertMsg:function(){
+				alert(this.msg)
+			}
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue hello world</title>
+</head>
+<body>
+	<div id="hello">
+		{{msg}}
+	</div>
+</body>
+<!-- 引入开发板vue -->
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	//model
+	var data = {
+		msg:"hello world"
+	}
+	//连接model和视图
+	var sayHello = new Vue({
+		//绑定视图元素
+		el:"#hello",
+		//绑定数据
+		data:data
+	})
+</script>
+</html>

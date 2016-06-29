@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue 列表渲染</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="item in items"><a href="" title='{{item.text}}'>{{item.text}}</a></li>
+		</ul>
+	</div>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	//模拟数据
+	var liData = {
+		items:[
+			{'text':'新闻一'},
+			{'text':'新闻二'},
+			{'text':'新闻三'},
+			{'text':'新闻四'},
+			{'text':'新闻五'}
+		]
+	}
+	//new Vue
+	var showLi = new Vue({
+		el:'#app',
+		data:liData
+	})
+</script>
+</html>

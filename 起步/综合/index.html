@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>综合练习</title>
+</head>
+<body>
+	<div id="app">
+		<p>请添加一些工具(回车Enter添加)</p>
+		<!-- 绑定newTodo数据 -->
+		<input type="text" placeholder="请输入工具名称" v-on:keyup.enter="addTodo" v-model="newTodo">
+		<ul>
+			<li v-for="Todo in Todos">{{Todo.name}}<button v-on:click="removeTodo($index)">×</button></li>
+		</ul>
+	</div>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	//model
+	var datas = {
+		newTodo:'',
+		Todos:[
+			{
+				name:"手电筒"
+			},
+			{
+				name:"钳子"
+			}
+		]
+	}
+
+	new Vue({
+		el:"#app",
+		data:datas,
+		methods:{
+			//添加工具方法
+			addTodo:function(){
+				//trim()去除字符串两端空格
+				var text = this.newTodo.trim();
+				//console.info(text)
+				//如果用户输入文本
+				if(text){
+					//推入工具对列
+					this.Todos.push({name:text});
+					//重置newTodo
+					this.newTodo='';
+				}
+			},
+			//移除工具
+			removeTodo:function(index){
+				//splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。index位置索引，1为数量
+				console.info(index);
+				this.Todos.splice(index,1)
+			}
+		}
+	})
+</script>
+</html>
