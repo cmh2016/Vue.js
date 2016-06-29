@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插值</title>
+	<style>
+		.item-1{
+			background-color: #000;
+			color: #fff;
+		}
+		.item-2{
+		
+			color: red;
+		}
+		.item-3{
+		
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	name:{{msg[0].name}}<br>
+	age:{{*msg[1].age}}岁
+	</div>
+	<div id="app2">
+		<ul>
+			<li class="item-{{item.id}}" v-for="item in items">{{item.text}}</li>
+		</ul>
+	</div>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	//文本。使用{{}}进行绑定，实时更新（{{* }}不能实时更新）
+	var data = {
+		'msg':[{
+			name:"张珊珊"
+		},
+		{
+			age:23
+		}]
+	}
+	new Vue({
+		el:'#app',
+		data:data
+	})
+	data.msg[0].name="王荆";//name - > 王荆
+	data.msg[1].age=45;//age - >23
+	//HTML特征
+	var data2 = {
+		'items':[
+			{
+				id:1,
+				text:"001"
+			},
+			{
+				id:2,
+				text:"003"
+			},
+			{
+				id:3,
+				text:"003"
+			}
+		]
+	}
+	new Vue({
+		el:'#app2',
+		data:data2
+	})
+</script>
+</html>

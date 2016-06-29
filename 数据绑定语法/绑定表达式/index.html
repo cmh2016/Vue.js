@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定表达式</title>
+</head>
+<body>
+	<div id="app">
+		{{msg[0].munber+1}}
+		<p>{{msg[1].ok?'yes':'no' | capitalize }}</p>
+	</div>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script>
+	var vm=new Vue({
+		el:"#app",
+		data:{
+			msg:[
+			{
+				munber:1
+			},
+			{
+				ok:true
+			}
+			]
+			}
+	})
+	vm.$data.msg[1].ok=false//yes -> no
+	//Vue.js 允许在表达式后添加可选的“过滤器 (Filter) ”，以“管道符”指示：
+</script>
+</html>
