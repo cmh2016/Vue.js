@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>指令</title>
+</head>
+
+<body>
+  <duv id="app">
+      <p  v-if="msg">hello</p>
+      <button type="button" @click="alert" name="button">{{msg}}</button>
+  </duv>
+</body>
+<script src="../../bower_components/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  /*
+    指令 (Directives) 是特殊的带有前缀 v- 的特性。指令的值限定为绑定表达式，因此上面提到的 JavaScript 表达式及过滤器规则在这里也适用。指令的职责就是当其表达式的值改变时把某些特殊的行为应用到 DOM 上
+    */
+    new Vue({
+      el:'#app',
+      data:{
+        msg:true//true - > hello
+      },
+      methods:{
+        alert:function () {
+          alert(this.msg)//this指向根实例
+        }
+      }
+    });
+  /*
+    v-on:click (简写)->@click  v-bind - > :
+  */
+</script>
+</html>
