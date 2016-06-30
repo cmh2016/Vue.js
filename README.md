@@ -11,13 +11,13 @@ Vue.js 的核心是一个响应的数据绑定系统，它让数据与 DOM 保�
 #组件系统
 组件系统是 Vue.js 另一个重要概念，因为它提供了一种抽象，让我们可以用独立可复用的小组件来构建大型应用。如果我们考虑到这点，几乎任意类型的应用的界面都可以抽象为一个组件树：
 ![组件系统](http://cn.vuejs.org/images/components.png)
-`<div id="app">  
-  <app-nav></app-nav>  
-  <app-view>  
-    <app-sidebar></app-sidebar>  
-    <app-content></app-content>  
-  </app-view>  
-</div>`
+`<div id="app">`  
+    `<app-nav></app-nav>`  
+  `<app-view> `   
+    `<app-sidebar></app-sidebar>`    
+    `<app-content></app-content>  `  
+  `</app-view> `   
+`</div>`
 
 你可能已经注意到 Vue.js 组件非常类似于自定义元素——它是 Web 组件规范的一部分。实际上 Vue.js 的组件语法参考了该规范。例如 Vue 组件实现了 Slot API 与 is 特性。但是，有几个关键的不同：  
 
@@ -26,5 +26,3 @@ Vue.js 的核心是一个响应的数据绑定系统，它让数据与 DOM 保�
 2.Vue.js 组件提供了原生自定义元素所不具备的一些重要功能，比如组件间的数据流，自定义事件系统，以及动态的、带特效的组件替换。  
 
 组件系统是用 Vue.js 构建大型应用的基础。另外，Vue.js 生态系统也提供了高级工具与多种支持库，它们和 Vue.js 一起构成了一个更加“框架”性的系统。
-
-
