@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性</title>
+</head>
+<body>
+  <div id="app">
+    a={{a}} ,b={{b}}
+  </div>
+</body>
+<script src="../bower_components/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      a:1
+    },
+    computed:{
+      // 一个计算属性的 getter
+      b:function(){
+        return this.a+1
+      }
+    }
+  });
+  vm.$data.a=2//a=2,b=3
+</script>
+</html>
