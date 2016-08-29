@@ -1,6 +1,6 @@
 # my-first-vue-demo
 
-> A Vue.js project
+> A Vue.js project。熟悉vue mvvm 开发模式，练习 v-* 指令和methods，watch等。数据使用html5的localStorage。
 
 ## Build Setup
 
